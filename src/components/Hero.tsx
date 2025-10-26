@@ -1,33 +1,38 @@
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // --- PERUBAHAN DI SINI ---
+  // Ganti URL Pexels dengan path lokal di folder /public Anda
   const slides = [
     {
-      image: 'https://images.pexels.com/photos/1166120/pexels-photo-1166120.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Bubur Jongkong Premium'
+      image: "/asset/images/1.jpg",
+      alt: "Bubur Jongkong Premium",
     },
     {
-      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Bubur Jongkong Segar'
+      image: "/asset/images/2.jpg",
+      alt: "Bubur Jongkong Segar",
     },
     {
-      image: 'https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Bubur Jongkong Lezat'
-    }
+      image: "/asset/images/outlet.jpg",
+      alt: "Bubur Jongkong Lezat",
+    },
   ];
 
   const scrollToMenu = () => {
-    const element = document.getElementById('menu');
+    const element = document.getElementById("menu");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/6282165551234?text=Halo%20Raoseco,%20saya%20ingin%20pesan%20Bubur%20Jongkong', '_blank');
+    window.open(
+      "https://wa.me/6282165551234?text=Halo%20Raoseco,%20saya%20ingin%20pesan%20Bubur%20Jongkong",
+      "_blank"
+    );
   };
 
   const nextSlide = () => {
@@ -47,15 +52,23 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="beranda" className="pt-20 bg-gradient-to-b from-[#F8F6E8] to-white">
+    <section
+      id="beranda"
+      className="pt-20 bg-gradient-to-b from-[#F8F6E8] to-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Nikmati Sensasi Kelezatan Otentik <span className="text-[#5B833D]">Bubur Jongkong Premium</span> dari Raoseco
+              Nikmati Sensasi Kelezatan Otentik{" "}
+              <span className="text-[#5B833D]">Bubur Jongkong Premium</span>{" "}
+              dari Raoseco
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              Rasakan perpaduan sempurna dari tiga lapisan istimewa: lembutnya bubur jongkong pandan asli yang wangi, berpadu dengan saus santan creamy yang gurih, dan disempurnakan oleh manis legit dari gula aren murni di lapisan terbawah. Ditambah taburan jagung manis segar, setiap sendokan adalah pengalaman lumer di mulut yang tak terlupakan. Dibuat setiap hari dari bahan-bahan segar pilihan, tanpa pengawet!
+              Nikmati sensasi 3 lapisan lumer Bubur Jongkong Raoseco! Perpaduan
+              sempurna pandan wangi, santan creamy yang gurih, dan gula aren
+              murni. Dilengkapi taburan jagung manis, setiap sendokan lumer di
+              mulut. Dibuat fresh setiap hari, tanpa pengawet!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
@@ -79,7 +92,7 @@ export default function Hero() {
                 <div
                   key={index}
                   className={`absolute inset-0 transition-opacity duration-700 ${
-                    index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    index === currentSlide ? "opacity-100" : "opacity-0"
                   }`}
                 >
                   <img
@@ -113,8 +126,8 @@ export default function Hero() {
                     onClick={() => setCurrentSlide(index)}
                     className={`w-2 h-2 rounded-full transition-all ${
                       index === currentSlide
-                        ? 'bg-white w-8'
-                        : 'bg-white/50 hover:bg-white/75'
+                        ? "bg-white w-8"
+                        : "bg-white/50 hover:bg-white/75"
                     }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
