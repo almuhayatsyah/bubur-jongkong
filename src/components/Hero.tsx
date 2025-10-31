@@ -30,7 +30,7 @@ export default function Hero() {
 
   const openWhatsApp = () => {
     window.open(
-      "https://wa.me/6282165551234?text=Halo%20Raoseco,%20saya%20ingin%20pesan%20Bubur%20Jongkong",
+      "https://wa.me/6283137964440?text=Halo%20Raoseco,%20saya%20ingin%20pesan%20Bubur%20Jongkong",
       "_blank"
     );
   };

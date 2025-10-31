@@ -16,6 +16,14 @@ export default function Gallery() {
       url: "/asset/images/outlet.jpg",
       title: "Outlet Raoseco",
     },
+    {
+      url: "/asset/images/3.jpg",
+      title: "Bubur Jongkong Enak",
+    },
+    {
+      url: "/asset/images/5.jpg",
+      title: "Bubur Jongkong Enak",
+    },
   ];
 
   return (

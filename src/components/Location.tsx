@@ -1,17 +1,17 @@
-import { MapPin, Clock } from 'lucide-react';
+import { Clock, MapPin } from "lucide-react";
 
 export default function Location() {
   const locations = [
     {
-      name: 'Car Free Day (CFD) Banda Aceh',
-      address: 'Jalan Teuku Umar, Banda Aceh',
-      schedule: 'Minggu, 07.00 - 11.00 WIB'
+      name: "Car Free Day (CFD) Banda Aceh",
+      address: "Jalan Teuku Umar, Banda Aceh",
+      schedule: "Minggu, 07.00 - 11.00 WIB",
     },
     {
-      name: 'Area Blang Padang',
-      address: 'Lapangan Blang Padang, Banda Aceh',
-      schedule: 'Setiap Hari, 16.00 - 18.30 WIB'
-    }
+      name: "Area Blang Padang",
+      address: "Lapangan Blang Padang, Banda Aceh",
+      schedule: "Setiap Hari, 16.00 - 18.30 WIB",
+    },
   ];
 
   return (
@@ -28,8 +28,13 @@ export default function Location() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
           {locations.map((location, index) => (
-            <div key={index} className="bg-[#F8F6E8] rounded-2xl p-8 hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">{location.name}</h3>
+            <div
+              key={index}
+              className="bg-[#F8F6E8] rounded-2xl p-8 hover:shadow-lg transition-shadow"
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                {location.name}
+              </h3>
 
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
@@ -47,7 +52,9 @@ export default function Location() {
                     <Clock className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 mb-1">Jam Operasional</p>
+                    <p className="font-medium text-gray-900 mb-1">
+                      Jam Operasional
+                    </p>
                     <p className="text-gray-600">{location.schedule}</p>
                   </div>
                 </div>
@@ -64,7 +71,12 @@ export default function Location() {
             Nikmati kelezatan Bubur Jongkong Raoseco tanpa harus keluar rumah
           </p>
           <button
-            onClick={() => window.open('https://wa.me/6282165551234?text=Halo%20Raoseco,%20saya%20ingin%20pesan%20Bubur%20Jongkong', '_blank')}
+            onClick={() =>
+              window.open(
+                "https://wa.me/6283137964440?text=Halo%20Raoseco,%20saya%20ingin%20pesan%20Bubur%20Jongkong",
+                "_blank"
+              )
+            }
             className="bg-white text-[#5B833D] px-10 py-4 rounded-full hover:bg-gray-100 transition-all font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
           >
             Pesan Sekarang via WhatsApp
