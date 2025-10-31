@@ -3,8 +3,14 @@ import { Clock, MapPin } from "lucide-react";
 export default function Location() {
   const locations = [
     {
+      name: "Alamat Produksi",
+      address:
+        "Komplek villa lamjabat, Lamjabat, Meuraxa (perumahan depan kantor keuchik lamjabat)(Nomor8)",
+      schedule: "Setiap Hari",
+    },
+    {
       name: "Car Free Day (CFD) Banda Aceh",
-      address: "Jalan Teuku Umar, Banda Aceh",
+      address: "Jalan Teukeu Umar,Banda Aceh)",
       schedule: "Minggu, 07.00 - 11.00 WIB",
     },
   ];
@@ -32,43 +38,47 @@ export default function Location() {
           </p>
         </div>
 
-        {/* LOKASI DI TENGAH */}
+        {/* LOKASI DENGAN SPACE ANTARA CARD */}
         <div className="flex justify-center mb-16">
-          <div className="max-w-2xl w-full">
-            {locations.map((location, index) => (
-              <div
-                key={index}
-                className="bg-[#F8F6E8] rounded-2xl p-8 hover:shadow-lg transition-shadow"
-              >
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                  {location.name}
-                </h3>
+          <div className="max-w-4xl w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {locations.map((location, index) => (
+                <div
+                  key={index}
+                  className="bg-[#F8F6E8] rounded-2xl p-8 hover:shadow-lg transition-shadow h-full"
+                >
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                    {location.name}
+                  </h3>
 
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-[#5B833D] rounded-full flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-white" />
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[#5B833D] rounded-full flex items-center justify-center">
+                        <MapPin className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-medium text-gray-900 mb-1">Lokasi</p>
+                        <p className="text-gray-600 leading-relaxed">
+                          {location.address}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-medium text-gray-900 mb-1">Lokasi</p>
-                      <p className="text-gray-600">{location.address}</p>
-                    </div>
-                  </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-[#5B833D] rounded-full flex items-center justify-center">
-                      <Clock className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-900 mb-1">
-                        Jam Operasional
-                      </p>
-                      <p className="text-gray-600">{location.schedule}</p>
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[#5B833D] rounded-full flex items-center justify-center">
+                        <Clock className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-medium text-gray-900 mb-1">
+                          Jam Operasional
+                        </p>
+                        <p className="text-gray-600">{location.schedule}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 

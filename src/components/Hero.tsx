@@ -51,7 +51,7 @@ export default function Hero() {
     }, 5000);
 
     return () => clearInterval(timer);
-  }, []);
+  });
 
   return (
     <section
