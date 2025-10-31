@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // --- PERUBAHAN DI SINI ---
-  // Ganti URL Pexels dengan path lokal di folder /public Anda
   const slides = [
     {
       image: "/asset/images/1.jpg",
@@ -33,6 +31,10 @@ export default function Hero() {
       "https://wa.me/6283137964440?text=Halo%20Raoseco,%20saya%20ingin%20pesan%20Bubur%20Jongkong",
       "_blank"
     );
+  };
+
+  const openGrabFood = () => {
+    window.open("https://r.grab.com/g/2-1-6-C7E2SFMCG3WBTA", "_blank");
   };
 
   const nextSlide = () => {
@@ -70,18 +72,38 @@ export default function Hero() {
               murni. Dilengkapi taburan jagung manis, setiap sendokan lumer di
               mulut. Dibuat fresh setiap hari, tanpa pengawet!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+
+            {/* TOMBOL-TOMBOL PEMESANAN */}
+            <div className="space-y-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  onClick={scrollToMenu}
+                  className="bg-[#5B833D] text-white px-8 py-4 rounded-full hover:bg-[#4a6b31] transition-all font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex-1 text-center"
+                >
+                  Lihat Menu
+                </button>
+                <button
+                  onClick={openWhatsApp}
+                  className="bg-white text-[#5B833D] border-2 border-[#5B833D] px-8 py-4 rounded-full hover:bg-[#5B833D] hover:text-white transition-all font-medium text-lg flex-1 text-center"
+                >
+                  Pesan via WhatsApp
+                </button>
+              </div>
+
+              {/* TOMBOL GRABFOOD BARU */}
               <button
-                onClick={scrollToMenu}
-                className="bg-[#5B833D] text-white px-8 py-4 rounded-full hover:bg-[#4a6b31] transition-all font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                onClick={openGrabFood}
+                className="w-full bg-gradient-to-r from-[#00B14F] to-[#00A650] text-white px-8 py-4 rounded-full hover:from-[#00A650] hover:to-[#009547] transition-all font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-3"
               >
-                Lihat Menu
-              </button>
-              <button
-                onClick={openWhatsApp}
-                className="bg-white text-[#5B833D] border-2 border-[#5B833D] px-8 py-4 rounded-full hover:bg-[#5B833D] hover:text-white transition-all font-medium text-lg"
-              >
-                Pesan via WhatsApp
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M19.148 2.971A2.008 2.008 0 0 0 17.434 2H6.566c-.698 0-1.355.372-1.714.971L2.143 7.485A3.954 3.954 0 0 0 2 9v5c0 1.103.897 2 2 2h2.638l1.812 2.843c.381.597.997.957 1.673.957h4.174c.676 0 1.292-.36 1.673-.957L17.362 16H20c1.103 0 2-.897 2-2V9c0-.548-.145-1.087-.428-1.569l-2.424-4.46zM14.092 16H9.908l-1.4-2.2-.1-.1H4V9h16v5h-4.408l-1.4 2.2-.1.1z" />
+                </svg>
+                Pesan via GrabFood
               </button>
             </div>
           </div>
